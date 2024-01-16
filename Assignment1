@@ -1,0 +1,67 @@
+Question 1a: Input the string “Python” as a list of characters from console, delete at least 2 characters, reversethe resultant string and print it.
+
+txt = "python"
+txt=txt.replace('y', '')
+txt=txt.replace('n', '')
+txt=txt[::-1]
+print(txt)
+
+output: 
+python
+ohtp
+
+1b)– Take two numbers from user and perform at least 4 arithmetic operations on them.
+
+inp1=int(input()) #input1 from user
+inp2=int(input()) #input2 from user
+res1=inp1+inp2 #addition operation
+print("add",res1)
+res1=inp1-inp2 #subtraction operation
+print("subtract",res1)
+res1=inp1*inp2 # multiplication operation
+print("multiply",res1)
+res1=inp1/inp2 # division operation
+print("divide",res1)
+res1=inp1%inp2 #remainder operation
+print('remainder',res1)
+res1 = inp1**inp2 #power operation
+print('power',res1)
+
+output:
+10
+20
+add 30
+subtract -10
+multiply 200
+divide 0.5
+remainder 10
+power 100000000000000000000
+
+
+
+Question 2: Write a program that accepts a sentence and replace each occurrence of ‘python’ with ‘pythons’.
+
+Banana = ' I love playing with python.'
+Ball = Banana.replace('python', 'pythons')
+print(Ball)
+
+output:
+I love playing with pythons
+
+Question 3: Use the if statement conditions to write a program to print the letter grade based on an input class score. Use the grading scheme we are using in this class.
+
+value = int(input("Enter your marks: "))
+if(value>90 and value<100):
+ print('A')
+elif(value >80 and value<90):
+ print('B')
+elif(value>= 70 and value<80):
+ print('C')
+elif( value> 60 and value< 70):
+ print('D')
+else:
+ print('F')
+
+output:
+Enter your marks: 55
+F
