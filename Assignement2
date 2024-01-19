@@ -1,0 +1,49 @@
+Q1:
+
+def fullname(first,last):
+  str=first+" "+last
+  return str
+def string_alternative(final):
+  newstr=final[::2]
+  return newstr
+first=input()
+last=input()
+final=fullname(first,last)
+print(final)
+alternate=string_alternative(final)
+print(alternate)
+
+Q2:
+
+file1 = open("input.txt", "r")
+string = file1.read()
+file2 = open("output.txt", "w+")
+words = dict()
+sep_words = string.split()
+for i in sep_words:
+    if i in words:
+        words[i] += 1
+    else:
+        words[i] = 1
+file2.write("Word_Count: " + str(words))
+print(file2.write())
+file2.close()
+
+
+Q3:
+
+L=[]
+O=[]
+x=int(input("No of heights"))
+for i in range(x):
+  L.append(float(input()))
+for j in range(x):
+  O.append(L[j]*2.504)
+print(O)
+
+Q3b:
+
+x = int(input("No of heights"))
+L = [float(input()) for _ in range(x)]
+O = [height * 2.504 for height in L]
+print(O)
