@@ -15,19 +15,18 @@ print(alternate)
 
 Q2:
 
-file1 = open("input.txt", "r")
-string = file1.read()
-file2 = open("output.txt", "w+")
-words = dict()
-sep_words = string.split()
-for i in sep_words:
-    if i in words:
-        words[i] += 1
-    else:
-        words[i] = 1
-file2.write("Word_Count: " + str(words))
-print(file2.write())
-file2.close()
+with open('input_file.txt', 'r') as ipf:
+    # Read the content of the file and split into words
+    words = ipf.read().split()
+word_counts = {}
+for word in words:
+    word_counts[word] = word_counts.get(word, 0) + 1
+with open('output_file.txt', 'w') as opf:
+    # Write word counts to the file
+    for word, count in word_counts.items():
+        opf.write(f"{word}: {count}\n")
+with open('output_file.txt', 'r') as opf:
+    print(opf.read())
 
 
 Q3:
