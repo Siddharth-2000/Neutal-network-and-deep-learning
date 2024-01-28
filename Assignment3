@@ -1,0 +1,81 @@
+Question !:
+
+class Employee:
+ NoEmpCount=0 #denotes the number of Employees initializing to Zero
+ def __init__(self, NamEmp, EmpFamily, EmpSalary, EmpDepartment):
+#constructor
+ self.NamEmp = NamEmp
+ self.EmpFamily = EmpFamily
+ self.EmpSalary = EmpSalary
+ self.EmpDepartment = EmpDepartment
+ Employee.NoEmpCount += 1
+ def avgsalary(self, *Empsalaries):#taking the entire salaries as single input
+ tot_sal = sum(Empsalaries)
+ return tot_sal / len(Empsalaries) #using average formula totalsum/totalcount
+class FulltimeEmployee(Employee):#inheriting the properties of Employee Class
+(Parent Class)
+ pass
+#Creating Instances of Three Employees and assigning values
+emp1 = Employee("Karan", "Rajput", 1550, "Developer")
+emp2 = Employee("Shilpa", "Kesineni", 1430, "Audit")
+emp3 = Employee("Ramya", "Thakur", 1900, "Tester")
+# Member Function call for Employee Class
+avgsalary = emp1.avgsalary(emp1.EmpSalary, emp2.EmpSalary,
+emp3.EmpSalary)
+print("Average salary for the Data given as per employees:", avgsalary)
+# Creating instances of FulltimeEmployee class
+fullemp1 = FulltimeEmployee("Siri", "Sunny", 8699, "Manager")
+fullemp2 = FulltimeEmployee("Meghana", "Tinku", 4500, "Sales")
+# Calling member functions of FulltimeEmployee class that is nothing but the
+inherited Employee Class
+avgsalary = fullemp1.avgsalary(fullemp1.EmpSalary, fullemp2.EmpSalary)
+print("Average salary of full-time employees:", avgsalary)
+print("Total Employee Count",Employee.NoEmpCount)
+
+
+Output:
+Average salary for the Data given as per employees: 1626.6666666666667
+Average salary of full-time employees: 6599.5
+Total Employee Count 5
+
+
+Question 2:
+
+
+import numpy as np #importing the package for using numpy package
+random_vec = np.random.uniform(1, 20, 20)#Generates random vector of size 20
+matrix_shape = random_vec.reshape(4, 5)
+print("Default Vector of Size 20:")
+print(random_vec)
+print("\nReshaped Vector for Size 20:")
+print(matrix_shape)
+max_values = np.max(matrix_shape, axis=1, keepdims=True) #For Calculating the
+maximum value in each row of the matrix_shape array, retaining the shape as a
+column vector.
+max_value_mask = matrix_shape == max_values # Creating a boolean mask
+indicating the positions of maximum values
+matrix_shape[max_value_mask] = 0 # After getting the position Replacing those
+maximum values with 0 using the mask
+print("\n max values after Replacement with 0 then The Matrix is:")
+print(matrix_shape)
+
+output:
+
+Default Vector of Size 20:
+[ 1.70621776 3.63668428 7.16492246 16.46712031 13.0224453 11.04183852
+ 4.56030841 19.31348943 9.53950215 14.57379817 13.27201626 1.63084012
+18.01029794 17.91900397 12.55827834 10.39354109 9.30069327 10.8341211
+13.02789407 10.70181164]
+Reshaped Vector for Size 20:
+[[ 1.70621776 3.63668428 7.16492246 16.46712031 13.0224453 ]
+[11.04183852 4.56030841 19.31348943 9.53950215 14.57379817]
+[13.27201626 1.63084012 18.01029794 17.91900397 12.55827834]
+[10.39354109 9.30069327 10.8341211 13.02789407 10.70181164]]
+After replacing max values with 0 The Matrix is:
+[[ 1.70621776 3.63668428 7.16492246 0. 13.0224453 ]
+[11.04183852 4.56030841 0. 9.53950215 14.57379817]
+[13.27201626 1.63084012 0. 17.91900397 12.55827834]
+[10.39354109 9.30069327 10.8341211 0. 10.70181164]]
+
+
+
